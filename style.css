@@ -1,0 +1,63 @@
+.cont{
+    display: flex;
+    height: 100vh;
+}
+#title{
+    font-family: system-ui;
+    padding-bottom: 40px;
+    font-family: "Outfit", sans-serif;
+    color: aliceblue;
+    text-align: center;}
+#con1{
+    flex: 7;
+    font-family: "Roboto Mono";
+    color: beige;
+}
+#con1 h1{
+    color: aliceblue;
+}
+#con2{
+    flex: 3;
+    margin-left: 20px;
+}
+#info{
+    padding-bottom: 20px;
+    color: beige;
+}
+#Aptitudes{
+    color: cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+}
+body{
+    background-color: rgb(8, 3, 21);
+}
+nav{
+    font-family: "Roboto Mono";
+    background-color: rgb(13, 6, 31);
+    word-spacing: 50px;
+}
+nav a{
+    text-decoration: none;
+    font-size: large;
+    color: rgb(66, 5, 219);
+}
+
+nav a:hover{
+    color: rgb(107, 43, 226);
+}
+ul{
+    color: beige;
+    font-family: "Roboto Mono";
+}
+#Emai{
+    text-decoration: none;
+    font-family: "Roboto Mono";
+    color: rgb(49, 41, 198);
+}
+
+#info span{
+    color: beige;
+    font-family: "Roboto Mono";
+    font-size: 12px;
+}
