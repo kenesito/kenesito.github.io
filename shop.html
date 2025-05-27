@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img id="logo" src="logo.png" alt="Logo" height="200px" width="200px">
+  <h1>Catálogo de Productos</h1>
+  <div id="productos">Cargando productos...</div>
+
+  <script>
+    const sheetUrl = "https://api.sheetbest.com/sheets/8aeaaa14-9413-4522-ad9d-d5627a411205";
+
+    fetch(sheetUrl)
+      .then(response => response.json())
+      .then(data => {
+        const contenedor = document.getElementById("productos");
+        contenedor.innerHTML = ''; // Limpiar el texto "Cargando..."
+
+        data.forEach(producto => {
+          if (producto.Activo && producto.Activo.toLowerCase() === "sí") {
+            contenedor.innerHTML += `
+              <div class="producto">
+                <img src="${producto.Imagen}" alt="${producto.Nombre}">
+                <h2>${producto.Nombre}</h2>
+                <p><strong>Precio:</strong> $${producto.Precio}</p>
+                <p class="descripcion"><strong>Descripción:</strong> ${producto.Descripción || "Sin descripción disponible."}</p>
+              </div>
+            `;
+          }
+        });
+
+        if (contenedor.innerHTML === '') {
+          contenedor.innerHTML = '<p>No hay productos activos disponibles.</p>';
+        }
+      })
+      .catch(error => {
+        console.error("Error al cargar los productos:", error);
+        document.getElementById("productos").innerHTML = 
+          "<p>Hubo un error al cargar los productos. Revisa la consola para más detalles.</p>";
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #fbfbfb;
+      font-family: "Saira", sans-serif;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+  
+    }
+    #logo{
+      display: block;
+    margin: 0 auto;
+    }
+    #productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .producto {
+      background-color: #ffffff;
+      border: 1px solid #080808;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .producto h2 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+    .producto p {
+      color: #555;
+      margin: 5px 0;
+    }
